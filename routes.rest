@@ -1,0 +1,6 @@
+
+###
+GET http://localhost:3000/contacts
+# the request above returns a json object with all professional data for Nathan Birch.
+
+GET GET http://localhost:3000/contacts/first
