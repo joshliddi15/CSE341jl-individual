@@ -35,7 +35,7 @@ DELETE http://localhost:3000/contacts/6456b2caab41e0a0188b2ad4 HTTP/1.1
 GET https://web-route-test.onrender.com/contacts
 
 ### Get contact by id
-GET https://web-route-test.onrender.com/contacts/644d955c063345950ec9be78
+GET https://web-route-test.onrender.com/contacts/6456b2caab41e0a0188b2ad4
 
 ### Create contact
 POST https://web-route-test.onrender.com/contacts HTTP/1.1
