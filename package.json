@@ -1,7 +1,7 @@
 {
   "name": "cse341",
   "version": "1.0.0",
-  "description": "A simple API to familiarize myself with node.js and routes",
+  "description": "A simple API to familiarize myself with node.js and router",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
