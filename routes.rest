@@ -17,7 +17,7 @@ content-type: application/json
 }
 
 ### PUT contact
-PUT http://localhost:3000/contacts/6456acb8efe0687b598be1ea HTTP/1.1
+PUT http://localhost:3000/contacts/6456b97fab41e0a0188b2ad6 HTTP/1.1
 content-type: application/json
 
 {
@@ -28,7 +28,7 @@ content-type: application/json
     "birthday":"07/13/2011"
 }
 ### DELETE contact
-DELETE http://localhost:3000/contacts/6456b2caab41e0a0188b2ad4 HTTP/1.1
+DELETE http://localhost:3000/contacts/6456b445149e850e34155979 HTTP/1.1
 
 // PRODUCTION Deploy
 ### Get all contacts
