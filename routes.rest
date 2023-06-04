@@ -63,3 +63,6 @@ content-type: application/json
 
 ### DELETE contact
 DELETE https://web-route-test.onrender.com/user/ HTTP/1.1
+
+### get product list
+GET http://localhost:3000/products
