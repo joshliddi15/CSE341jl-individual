@@ -2,9 +2,10 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getData = async (req, res, next) => {
+  console.log("getting contact data");
   const userId = new ObjectId(req.params.id);
   console.log('sending request');
-  const result = await mongodb.getDb().db().collection('contacts').find({ _id: userId });
+  const result = await mongodb.getDb().db().collection('user').find({ _id: userId });
   console.log(result);
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -14,7 +15,7 @@ const getData = async (req, res, next) => {
 
 const getAllData = async (req, res, next) => {
   console.log('sending request');
-  const result = await mongodb.getDb().db().collection('contacts').find();
+  const result = await mongodb.getDb().db().collection('user').find();
   console.log(result);
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -30,7 +31,7 @@ const createContact = async (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday
   };
-  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
+  const response = await mongodb.getDb().db().collection('user').insertOne(contact);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -51,7 +52,7 @@ const updateContact = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db()
-    .collection('contacts')
+    .collection('user')
     .replaceOne({ _id: userId }, contact);
   console.log(response);
   if (response.modifiedCount > 0) {
@@ -63,7 +64,7 @@ const updateContact = async (req, res) => {
 
 const deleteContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: userId }, true);
+  const response = await mongodb.getDb().db().collection('user').deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();
