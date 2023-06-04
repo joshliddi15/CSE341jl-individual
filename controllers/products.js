@@ -1,5 +1,6 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
+const { validationResult } = require('express-validator');
 
 const getProduct = async (req, res, next) => {
   const productId = new ObjectId(req.params.id);
@@ -20,6 +21,9 @@ const getAllProducts = async (req, res, next) => {
 };
 
 const createProduct = async (req, res) => {
+  const errors = validationResult(req)
+  if (!errors.isEmpty()) {
+  return res.status(422).json({ errors: errors.array() })}
   const product = {
     description: req.body.description,
     name: req.body.name,
