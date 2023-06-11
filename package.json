@@ -19,7 +19,13 @@
     "mongodb": "^5.3.0",
     "swagger-autogen": "^2.23.1",
     "swagger-ui-express": "^4.6.3",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "agent-base": "^6.0.2",
+    "debug": "~3.2.7",
+    "ejs": "^3.1.8",
+    "express-openid-connect": "^2.16.0",
+    "http-errors": "~1.8.1",
+    "morgan": "~1.10.0"
   },
   "engines": {
     "node": ">=14 <15"
